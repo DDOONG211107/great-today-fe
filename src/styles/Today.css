@@ -1,0 +1,40 @@
+body,
+html {
+  height: 100%; /* 전체 높이를 100%로 설정 */
+  margin: 0; /* 기본 여백 제거 */
+}
+
+.today-container {
+  width: 300px; /* 너비 설정 */
+  height: 600px; /* 높이 설정 */
+  display: flex;
+  flex-direction: column; /* 세로로 배치 */
+  justify-content: center; /* 수직 가운데 정렬 */
+  align-items: center; /* 수평 가운데 정렬 */
+  margin: auto; /* 수평 가운데 정렬을 위한 여백 */
+  position: absolute; /* 화면 전체에 대해 절대 위치 설정 */
+  top: 50%; /* 화면의 50% 위치 */
+  left: 50%; /* 화면의 50% 위치 */
+  transform: translate(-50%, -50%); /* 요소의 중심을 기준으로 이동 */
+}
+
+.today-quests {
+  width: 100%;
+  height: 470px; /* 큰 부분 높이 */
+  overflow-y: auto; /* 리스트가 길 경우 스크롤 가능 */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.today-share {
+  width: 100%;
+  height: 130px; /* 작은 부분 높이 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-button:disabled {
+  background-color: gray; /* 비활성화 상태일 때 배경 회색 */
+  cursor: not-allowed;
+}

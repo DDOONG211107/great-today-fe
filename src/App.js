@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header";
+import Drawer from "./components/Drawer"; // Drawer 컴포넌트 추가
+import RouterConfig from "./router/Router";
 
 function App() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header openDrawer={toggleDrawer} />
+      {drawerOpen && <Drawer toggleDrawer={toggleDrawer} />}
+      <RouterConfig />
+    </Router>
   );
 }
 
